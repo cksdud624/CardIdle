@@ -4,7 +4,7 @@ using Common.Scene.Parameter;
 using Common.Template;
 using Common.Template.Interface;
 using Cysharp.Threading.Tasks;
-//using Generated.Table;
+using Generated.Table;
 using UnityEngine;
 
 namespace Common
@@ -16,15 +16,15 @@ namespace Common
         private readonly List<ILateUpdateable> _lateUpdateables = new ();
         
         public SceneLoader SceneLoader { get; private set; }
-        //public TableManager TableManager { get; private set; }
+        public TableManager TableManager { get; private set; }
         public AssetManager AssetManager { get; private set; }
 
         public void Init() => Load().Forget();
 
         private async UniTask Load()
         {
-            //TableManager = InitGlobal<TableManager>();
-            //await TableManager.Init();
+            TableManager = InitGlobal<TableManager>();
+            await TableManager.Init();
             SceneLoader = InitGlobal<SceneLoader>();
             AssetManager = InitGlobal<AssetManager>();
             
