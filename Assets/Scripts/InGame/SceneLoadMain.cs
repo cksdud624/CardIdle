@@ -9,6 +9,8 @@ namespace InGame
 {
     public class SceneLoadMain : SceneLoadBase, ISceneParameter<SceneParameterMain>
     {
+        [SerializeField] private GameController gameController;
+        
         private SceneParameterMain _sceneParameterMain;
         protected void Awake() => Global.Instance.SceneLoader.SetCurrentScene<SceneParameterMain>(this);
         
@@ -19,6 +21,8 @@ namespace InGame
                 Debug.LogError($"{typeof(SceneParameterMain)} is null");
                 return;
             }
+
+            gameController.Init(_sceneParameterMain).Forget();
         }
 
         public void SetParameter(SceneParameterMain parameter) => _sceneParameterMain = parameter;
