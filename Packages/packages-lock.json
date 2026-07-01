@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.aetherforgeai.sprite-shader": {
+      "version": "https://github.com/aether4co/com.aetherforgeai.sprite-shader.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.shadergraph": "17.0.4"
+      },
+      "hash": "806eb977dd70b8e6e8340493100c19d8e1bc7e56"
+    },
     "com.unity.2d.animation": {
       "version": "15.1.0",
       "depth": 0,
